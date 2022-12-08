@@ -1,0 +1,26 @@
+Pendelzugsteuerung mit Arduino
+12/2022
+
+Zug-Zustände:
+
+                              I   F
+I----------------SWL--------- ##### ----------------SWR---------------I
+                              oO-O
+     3 <--------- 2 <---------- 1 ---------------------- 9 <----- 8
+     I                                                            I
+     4 ------> 5 ----------------------------------> 6 ---------> 7
+
+
+1. Startzustand                     Bewegung nach links, langsam
+2. FL, SWL erkannt		    Bewegung nach links, Bremsen, Stop
+   oder Timeout
+3. Stop links                       Haltezeit links abwarten
+4. FR                               Bewegung nach rechts, Beschleunigen
+5. FR schnell                       Bewegung nach rechts, volle Geschw.
+6. FR, SWR erkannt		    Bewegung nach rechts, Bremsen, Stop
+   oder Timeout
+7. Stop rechts                      Haltezeit rechts abwarten
+8. FL                               Bewegung nach links, Beschleunigen
+9. FL schnell                       Bewegung nach links, volle Geschw.
+10. Fehler			    Sofort Stop
+
